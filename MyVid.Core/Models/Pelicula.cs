@@ -12,12 +12,10 @@ namespace MyVid.Core.Models
     {
         [Key]
         public int ID { get; set; }
-
         [ForeignKey("Contenido")]
         public int ContenidoID { get; set; }
-
         public virtual Contenido Contenido { get; set; }
-
+        public string RutaArchivo { get; set; }
         public string Calificacion { get; set; }
     }
 }
