@@ -2,14 +2,14 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyVid.Core.Models;
 
-namespace myVid.Data
+namespace MyVid.Data
 {
     internal class SerieConfiguration : IEntityTypeConfiguration<Serie>
     {
         public void Configure(EntityTypeBuilder<Serie> modelBuilder)
         {
             modelBuilder.ToTable("Series");
-            modelBuilder.HasKey(s => s.ContenidoID);
+            modelBuilder.HasKey(s => s.ID);
         }
 
     }

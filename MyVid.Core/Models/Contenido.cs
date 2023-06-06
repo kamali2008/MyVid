@@ -14,27 +14,26 @@ namespace MyVid.Core.Models
         public int ID { get; set; }
 
         [Required]
-        public string Título { get; set; }
+        public string Titulo { get; set; }
 
-        public string Descripción { get; set; }
+        public string Descripcion { get; set; }
 
-        public int Año { get; set; }
+        public int Year { get; set; }
 
-        public int? Duración { get; set; }
+        public int? Duracion { get; set; }
 
         public string Director { get; set; }
 
         [Required]
         public string Tipo { get; set; }
 
-        [Column(TypeName = "jsonb")]
-        public List<string> URLVideo { get; set; }
+        public string URLVideo { get; set; }
 
         public string URLPoster { get; set; }
 
-        public virtual ICollection<Pelicula> Peliculas { get; set; }
+        //public virtual ICollection<Pelicula> Peliculas { get; set; }
 
-        public virtual ICollection<Serie> Series { get; set; }
+        //public virtual ICollection<Serie> Series { get; set; }
 
         public virtual ICollection<ContenidoActor> ContenidoActores { get; set; }
 

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyVid.Core.Models;
 
-namespace myVid.Data
+namespace MyVid.Data
 {
     internal class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
     {
@@ -12,7 +12,7 @@ namespace myVid.Data
             modelBuilder.HasKey(u => u.ID);
             modelBuilder.Property(u => u.Nombre).IsRequired();
             modelBuilder.Property(u => u.Email).IsRequired();
-            modelBuilder.Property(u => u.Contraseña).IsRequired();
+            modelBuilder.Property(u => u.Password).IsRequired();
             modelBuilder.Property(u => u.Rol).IsRequired();
             modelBuilder.HasMany(u => u.ListasReproduccion).WithOne(lr => lr.Usuario).HasForeignKey(lr => lr.UsuarioID);
             modelBuilder.HasMany(u => u.Comentarios).WithOne(c => c.Usuario).HasForeignKey(c => c.UsuarioID);

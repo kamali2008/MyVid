@@ -1,7 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using MyVid.Core;
+using MyVid.Data;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options
+                                .UseSqlServer(builder.Configuration.GetConnectionString("Default"),
+                                                    x => x.MigrationsAssembly("MyVid.Data")));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

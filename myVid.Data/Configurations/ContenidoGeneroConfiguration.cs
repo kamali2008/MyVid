@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyVid.Core.Models;
 
-namespace myVid.Data
+namespace MyVid.Data
 {
     internal class ContenidoGeneroConfiguration : IEntityTypeConfiguration<ContenidoGenero>
     {

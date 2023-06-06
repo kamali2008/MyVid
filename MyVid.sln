@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVid.Core", "MyVid.Core\MyVid.Core.csproj", "{E1B276DD-2BE7-45F4-8678-48C2E064C172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyVid.Core", "MyVid.Core\MyVid.Core.csproj", "{E1B276DD-2BE7-45F4-8678-48C2E064C172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVid.Services", "MyVid.Services\MyVid.Services.csproj", "{E520793D-43AD-492D-AFEE-FA702F8245D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyVid.Services", "MyVid.Services\MyVid.Services.csproj", "{E520793D-43AD-492D-AFEE-FA702F8245D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myVid.Data", "myVid.Data\myVid.Data.csproj", "{D1AE2EA0-11FB-410F-9BF0-3A9F0370B000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyVid.Data", "myVid.Data\MyVid.Data.csproj", "{D1AE2EA0-11FB-410F-9BF0-3A9F0370B000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVid.Web", "MyVid.Web\MyVid.Web.csproj", "{98EC9FE7-4ED3-4E62-B591-6EE035F7735F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyVid.Web", "MyVid.Web\MyVid.Web.csproj", "{98EC9FE7-4ED3-4E62-B591-6EE035F7735F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,9 +15,9 @@ namespace MyVid.Core.Models
 
         public string Título { get; set; }
 
-        public string Descripción { get; set; }
+        public string Descripcion { get; set; }
 
-        public int Duración { get; set; }
+        public int Duracion { get; set; }
 
         public string RutaArchivo { get; set; }
     }

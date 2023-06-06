@@ -11,6 +11,8 @@ namespace MyVid.Core.Models
     public class Pelicula
     {
         [Key]
+        public int ID { get; set; }
+
         [ForeignKey("Contenido")]
         public int ContenidoID { get; set; }
 

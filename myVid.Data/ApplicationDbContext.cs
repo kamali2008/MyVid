@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-    using System.Numerics;
-    using System.Reflection.Emit;
+using System.Numerics;
+using System.Reflection.Emit;
 using System.Reflection;
 using MyVid.Core.Models;
-using myVid.Data.Configurations;
+using MyVid.Data.Configurations;
 
-namespace myVid.Data
+namespace MyVid.Data
 {
 
 
