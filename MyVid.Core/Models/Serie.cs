@@ -11,13 +11,9 @@ namespace MyVid.Core.Models
     public class Serie
     {
         [Key]
-        public int ID { get; set; }
-
         [ForeignKey("Contenido")]
         public int ContenidoID { get; set; }
-
         public virtual Contenido Contenido { get; set; }
-
         public virtual ICollection<Temporada> Temporadas { get; set; }
     }
 }

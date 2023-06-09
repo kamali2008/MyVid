@@ -9,7 +9,7 @@ namespace MyVid.Data
         public void Configure(EntityTypeBuilder<Serie> modelBuilder)
         {
             modelBuilder.ToTable("Series");
-            modelBuilder.HasKey(s => s.ID);
+            modelBuilder.HasKey(s => s.ContenidoID);
         }
 
     }

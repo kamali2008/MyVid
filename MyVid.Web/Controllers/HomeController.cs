@@ -47,9 +47,26 @@ namespace MyVid.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPelicula(int ID)
         {
-           Pelicula pelicula = await _unitOfWork.PeliculaRepository.GetByIdAsync(ID);
+           Pelicula? pelicula = await _unitOfWork.PeliculaRepository.GetByIdAsync(ID);
            // await _unitOfWork.SaveChangesAsync();
             return new JsonResult(pelicula);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeletePelicula(int ID)
+        {
+            Pelicula? pelicula = await _unitOfWork.PeliculaRepository.GetByIdAsync(ID);
+            if (pelicula != null)
+            {
+                _unitOfWork.ContenidoRepository.Remove(pelicula.Contenido);
+                await _unitOfWork.SaveChangesAsync();
+                return Ok(pelicula);
+            }
+            else
+            {
+                return NotFound();
+            }
+
         }
     }
 }

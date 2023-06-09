@@ -9,7 +9,7 @@ namespace MyVid.Data
         public void Configure(EntityTypeBuilder<Pelicula> modelBuilder)
         {
             modelBuilder.ToTable("Peliculas");
-            modelBuilder.HasKey(p => p.ID);
+            modelBuilder.HasKey(p => p.ContenidoID);
             modelBuilder.Property(p => p.Calificacion).IsRequired();
         }
 

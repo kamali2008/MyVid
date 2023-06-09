@@ -84,7 +84,7 @@ namespace MyVid.Data
             // Configuración de eliminación en cascada
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+                relationship.DeleteBehavior = DeleteBehavior.Cascade;
             }
 
             // Configuración de campos obligatorios en base a atributos

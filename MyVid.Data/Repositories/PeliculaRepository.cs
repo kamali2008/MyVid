@@ -6,7 +6,7 @@ namespace MyVid.Data.Repositories
 {
     public class PeliculaRepository : Repository<Pelicula>, IPeliculaRepository
     {
-        ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         public PeliculaRepository(ApplicationDbContext context) : base(context)
         {
             _context = context;
@@ -26,11 +26,11 @@ namespace MyVid.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Pelicula> GetByIdAsync(int id)
+        public async Task<Pelicula?> GetByIdAsync(int id)
         {
             return await _context.Peliculas
                 .Include(p => p.Contenido)
-                .FirstOrDefaultAsync(p => p.ID == id);
+                .FirstOrDefaultAsync(p => p.ContenidoID == id);
         }
         // Implementación de otros metodos especificos de Pelicula
     }

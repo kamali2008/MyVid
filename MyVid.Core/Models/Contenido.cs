@@ -22,9 +22,9 @@ namespace MyVid.Core.Models
         public string Tipo { get; set; }
         public string URLPoster { get; set; }
 
-        //public virtual ICollection<Pelicula> Peliculas { get; set; }
+        public virtual Pelicula Peliculas { get; set; }
 
-        //public virtual ICollection<Serie> Series { get; set; }
+        public virtual Serie Series { get; set; }
 
         public virtual ICollection<ContenidoActor> ContenidoActores { get; set; }
         public virtual ICollection<ContenidoGenero> ContenidoGeneros { get; set; }
