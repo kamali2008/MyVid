@@ -9,10 +9,10 @@ namespace MyVid.Data
         public void Configure(EntityTypeBuilder<Usuario> modelBuilder)
         {
             modelBuilder.ToTable("Usuarios");
-            modelBuilder.HasKey(u => u.ID);
+            modelBuilder.HasKey(u => u.Id);
             modelBuilder.Property(u => u.Nombre).IsRequired();
             modelBuilder.Property(u => u.Email).IsRequired();
-            modelBuilder.Property(u => u.Password).IsRequired();
+            modelBuilder.Property(u => u.PasswordHash).IsRequired();
             modelBuilder.Property(u => u.Rol).IsRequired();
             modelBuilder.HasMany(u => u.ListasReproduccion).WithOne(lr => lr.Usuario).HasForeignKey(lr => lr.UsuarioID);
             modelBuilder.HasMany(u => u.Comentarios).WithOne(c => c.Usuario).HasForeignKey(c => c.UsuarioID);
