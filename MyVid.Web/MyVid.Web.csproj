@@ -21,16 +21,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\myVid.Data\MyVid.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\alela\js\custom.js" />
     <None Include="wwwroot\alela\js\custom.min.js" />
     <None Include="wwwroot\Vendors\jquery\dist\jquery.js" />
     <None Include="wwwroot\Vendors\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\Vendors\jquery\dist\jquery.min.map" />
     <None Include="wwwroot\Vendors\nprogress\nprogress.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\myVid.Data\MyVid.Data.csproj" />
+    <ProjectReference Include="..\MyVid.Services\MyVid.Services.csproj" />
   </ItemGroup>
 
 </Project>

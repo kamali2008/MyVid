@@ -1,7 +1,8 @@
 ﻿@{
     Layout = null;
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sign Up";
 }
+@model RegisterViewModel;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,19 +35,22 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form>
+                    <form asp-controller="Auth" asp-action="Register" method="post">
                         <h1>Create Account</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input asp-for=Nombre class="form-control text" name="nombre" required="required" type="text" placeholder="Nombre" />
                         </div>
                         <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
+                            <input asp-for=Email class="form-control email" name="email" required="required" type="email" placeholder="Email" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input asp-for=Password type="password" class="form-control" placeholder="Password" required="" />
                         </div>
                         <div>
-                            <button type="button" class="btn btn-secondary">Sign up</button>
+                            <input asp-for=PasswordConfirm type="password" class="form-control" placeholder="Password confirm" required="" />
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-secondary">Sign up</button>
                         </div>
 
                         <div class="clearfix"></div>
@@ -54,7 +58,7 @@
                         <div class="separator">
                             <p class="change_link">
                                 Already a member ?
-                                <a href="#signin" class="to_register"> Log in </a>
+                                <a asp-action="Login" asp-controller="Auth" class="to_register"> Log in </a>
                             </p>
 
                             <div class="clearfix"></div>

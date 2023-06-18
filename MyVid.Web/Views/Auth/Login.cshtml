@@ -1,4 +1,4 @@
-﻿@using MyVid.Web.Models.Auth;
+﻿
 
 @{
     Layout = null;
@@ -37,7 +37,7 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form asp-controller="Auth" asp-action="Signin" method="post">
+                    <form asp-controller="Auth" asp-action="Login" method="post">
                         <h1>Login</h1>
                         <div>
                             <input asp-for=Email  class="form-control email" name="email" required="required" type="email" placeholder="Email" />
@@ -45,8 +45,12 @@
                         <div>
                             <input asp-for=Password type="password" class="form-control" placeholder="Password" required="" />
                         </div>
+                        @if (TempData["msg"] != null)
+                        {
+                            <div class=" text-danger">@TempData["msg"]</div>
+                        }
                         <div>
-                            <button type="button" class="btn btn-secondary">Login</button>
+                            <button type="submit" class="btn btn-secondary">Login</button>
                             <a class="reset_pass" href="#">Lost your password?</a>
                         </div>
 

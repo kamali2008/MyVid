@@ -15,7 +15,7 @@ namespace MyVid.Core.Models
         public virtual Contenido Contenido { get; set; }
 
         [ForeignKey("Usuario")]
-        public int UsuarioID { get; set; }
+        public string UsuarioID { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyVid.Core;
 using MyVid.Core.Models;
 using MyVid.Web.Models;
@@ -16,6 +17,8 @@ namespace MyVid.Web.Controllers
             _logger = logger;
             _unitOfWork = unitOfWork;
         }
+
+        [Authorize(Roles = "admin,Super-Admin")]
 
         public IActionResult Index()
         {

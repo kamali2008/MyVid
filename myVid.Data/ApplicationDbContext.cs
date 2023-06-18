@@ -9,12 +9,13 @@ using System.Reflection.Emit;
 using System.Reflection;
 using MyVid.Core.Models;
 using MyVid.Data.Configurations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MyVid.Data
 {
 
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext :  IdentityDbContext<Usuario>
     {
         public DbSet<Contenido> Contenidos { get; set; }
         public DbSet<Pelicula> Peliculas { get; set; }
