@@ -56,7 +56,7 @@ namespace MyVid.Web.Controllers
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid) { return View(model); }
-            string role = "Super-Admin";
+            string role = "User";
             Usuario usuario = new Usuario { 
                 Nombre = model.Nombre,
                 Email = model.Email,

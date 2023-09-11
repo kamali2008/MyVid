@@ -18,7 +18,7 @@ namespace MyVid.Web.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [Authorize(Roles = "admin,Super-Admin")]
+
 
         public IActionResult Index()
         {
@@ -37,39 +37,6 @@ namespace MyVid.Web.Controllers
         }
 
 
-        /***** End poins de pruebas *****/
-
-        [HttpPost]
-        public async Task<IActionResult> AddPelicula([FromBody] Pelicula pelicula)
-        {
-            await _unitOfWork.PeliculaRepository.AddAsync(pelicula);
-            await _unitOfWork.SaveChangesAsync();
-            return new JsonResult(pelicula);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetPelicula(int ID)
-        {
-           Pelicula? pelicula = await _unitOfWork.PeliculaRepository.GetByIdAsync(ID);
-           // await _unitOfWork.SaveChangesAsync();
-            return new JsonResult(pelicula);
-        }
-
-        [HttpDelete]
-        public async Task<IActionResult> DeletePelicula(int ID)
-        {
-            Pelicula? pelicula = await _unitOfWork.PeliculaRepository.GetByIdAsync(ID);
-            if (pelicula != null)
-            {
-                _unitOfWork.ContenidoRepository.Remove(pelicula.Contenido);
-                await _unitOfWork.SaveChangesAsync();
-                return Ok(pelicula);
-            }
-            else
-            {
-                return NotFound();
-            }
-
-        }
+    
     }
 }

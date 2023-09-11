@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+}
+@model Usuario;
+
+
+
+<div class="container-fluid">
+    <h3>User Profile</h3>
+    <div class="ln_solid"></div>
+    <div class="row">
+        <div class="col-lg-4 col-xlg-3 col-md-5">
+            <div class="card">
+                <div class="card-body profile-card">
+                    <center class="mt-4">
+                        <img src="~/images/img.jpg"
+                             class="rounded-circle"
+                             width="150" />
+                        <h4 class="card-title mt-2">@Model.Apellido, @Model.Nombre</h4>
+                        <h6 class="card-subtitle">@Model.Email</h6>
+
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-xlg-9 col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-area="Admin" asp-controller="Users" asp-action="Profile" method="post" data-parsley-validate class="form-horizontal form-label-left">
+                        <div class="visible">
+                            <input asp-for=Email name="email" type="hidden" id="Email">
+                        </div>
+                        <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nombre">
+                                Nombre <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input asp-for=Nombre class="form-control text" name="nombre" required="required" type="text" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="Apellido">
+                                Apellidos <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input asp-for=Apellido class="form-control text" name="Apellido" required="required" type="text" placeholder="Apellido">
+                            </div>
+                        </div>
+
+                        <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <div class="btn-group" role="group">
+                                    <input type="radio" class="btn-check" name="genero" asp-for="Genero" value="male" id="gender-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="gender-male">male</label>
+
+                                    <input type="radio" class="btn-check" name="genero" asp-for="Genero" value="female" id="gender-female" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="gender-female">female</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                Fecha de naceniento <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input asp-for="FechaNacemiento" id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" required="required" type="date" onmouseout="timeFunctionLong(this)">
+                                <script>
+                                    function timeFunctionLong(input) {
+                                        setTimeout(function () {
+                                            input.type = 'text';
+                                        }, 60000);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <br />
+                        <div class="item form-group">
+                            <div class="col-md-6 col-sm-6 offset-md-3">
+
+                                <button type="submit" class="btn btn-success">Actualizar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -138,6 +138,23 @@ namespace MyVid.Services.Users
         }
 
         public async Task<Usuario> GetByEmailAsync(string email) => await userManager.FindByEmailAsync(email);
+
+        public async Task<Status> UpdateUser(Usuario usuario)
+        {
+            var status = new Status();
+            var result = await userManager.UpdateAsync(usuario);
+            if(result.Succeeded)
+            {
+                status.Message = "User has updated successfully";
+                status.StatusCode = 1;
+            }
+            else
+            {
+                status.Message = "Some error occcured";
+                status.StatusCode = 0;
+            }
+            return status;
+        }
     }
 
 
